@@ -8,7 +8,7 @@
 .grid-container {
   // height: 100%;
   // flex: 1 auto;
-  max-width: 1614px;
+  max-width: 1600px;
   margin: 76px 32px 0 auto;
   // margin-left: 274px;
   // margin-right: 32px;
@@ -20,7 +20,7 @@
 .home-info {
   // border: 1px solid red;
   // padding-left: 32px;
-  padding-left: 113px;
+  padding-left: 81px;
   margin-top: 102px;
 
   &__header {
@@ -30,6 +30,7 @@
     font-family: 'Anton', sans-serif;
     font-size: 68px;
     line-height: 88px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     margin: 0;
     margin-bottom: 33px;
     margin-left: -81px;
@@ -39,6 +40,7 @@
     max-width: 560px;
     margin: 0;
     // margin-left: 81px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     font-size: 18px;
     line-height: 160%;
     margin-bottom: 63px;
@@ -47,6 +49,8 @@
   &__arrow {
     margin-top: 65px;
     display: block;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .25));
+    padding-bottom: 55px;
   }
 
 }

@@ -2,9 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // border: 1px solid red;
-  max-width: 1190px;
+  max-width: 1980px;
   margin: 0 auto;
+}
+
+.menu-btn {
+  display: none;
 }
 
 nav > ul {
@@ -31,5 +34,15 @@ nav > ul {
     &:active {
       transform: scale(.99);
     }
+  }
+}
+
+@media (max-width: 775px) {
+  nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
   }
 }

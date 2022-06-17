@@ -1,9 +1,9 @@
 <div class="container">
   <div class="contact__header-block">
     <h2 class="contact__title">contact <span>us</span></h2>
-    <a href="#"><img src="../../assets/Group2279.png" alt=""></a>
+    <a href="#"><img class="scroll-arrow" src="../../assets/Group2279.png" alt="arrow"></a>
   </div>
-  <div class="form-container">
+  <!-- <div class="form-container"> -->
     <form class="contact__form" [formGroup]="form" (ngSubmit)="saveDetails(form)">
       <mat-form-field [hideRequiredMarker]="'true'">
         <mat-label>Full Name</mat-label>
@@ -19,29 +19,42 @@
 
       <mat-form-field [hideRequiredMarker]="'true'">
         <mat-label>Phone Number</mat-label>
-        <input matInput maxlength="15" type="tel" inputmode="tel" formControlName="phone">
+        <input
+          matInput
+          maxlength="12"
+          type="text"
+          inputmode="tel"
+          (keypress)="inputChecker($event)"
+          formControlName="phone">
         <mat-error>Phone Number is invalid</mat-error>
       </mat-form-field>
 
       <mat-form-field [hideRequiredMarker]="'true'">
-        <mat-label>Email Address:</mat-label>
+        <mat-label>E-mail</mat-label>
         <input matInput type="email" inputmode="email" formControlName="email">
         <mat-error>Email is invalid</mat-error>
       </mat-form-field>
 
       <mat-form-field [hideRequiredMarker]="'true'">
         <mat-label>Write Us Messages</mat-label>
-        <textarea matInput formControlName="message"></textarea>
-        <mat-error>min 10 </mat-error>
+        <textarea matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          formControlName="message"
+          cdkAutosizeMinRows="5"
+          cdkAutosizeMaxRows="7"></textarea>
+        <mat-error>min length is 10 signs</mat-error>
       </mat-form-field>
 
-      <div mat-dialog-actions align="start">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+      <div class="contact__button-block" mat-dialog-actions align="start">
+        <app-button
+          [disabled]="!form.valid"
+          [btnConfig]="{'padding': '21px 32px', 'background-color': '#FFBC00'}">Send Message</app-button>
       </div>
     </form>
   </div>
 
 <!-- <div>{{ form.value | json }}</div> -->
 
-</div>
+<!-- </div> -->
 

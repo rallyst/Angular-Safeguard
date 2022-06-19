@@ -44,4 +44,7 @@ export class ContactFormComponent implements OnInit {
     }
   }
 
+  topScroll() {
+    document.documentElement.scrollTop = 0;
+  }
 }

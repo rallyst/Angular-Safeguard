@@ -4,9 +4,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
-  { path: 'main', component: MainPageComponent },
+  { path: '', component: MainPageComponent },
   { path: 'menu', component: MenuComponent},
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: '**', redirectTo: '' }
 ];
 

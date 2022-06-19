@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   }
 
   closeBtn() {
-    this.router.navigate(['/main']);
+    this.router.navigate(['/']);
   }
 
 }

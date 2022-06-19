@@ -1,5 +1,7 @@
+@use "../../../styles/variables" as variables;
+
 .container {
-  background-color: #FFBC00;
+  background-color: variables.$color-main;
   min-height: 100vh;
   padding: 48px 27px 0;
 }
@@ -19,7 +21,7 @@
   content: ' ';
   height: 30px;
   width: 3px;
-  background-color: #333;
+  background-color: variables.$color-black;
 }
 
 .close:before {

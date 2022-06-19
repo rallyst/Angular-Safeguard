@@ -1,3 +1,5 @@
+@use "../../../../styles/variables" as variables;
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,16 +22,16 @@ nav > ul {
   font-size: 18px;
   font-weight: 500;
   padding: 14px 0;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+  text-shadow: variables.$shadow-light;
   margin-right: 50px;
   cursor: pointer;
 
   &:last-child {
     margin-right: 0;
     padding: 14px;
-    background-color: #fff;
+    background-color: variables.$color-white;
     border-radius: 12px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: variables.$shadow-light;
 
     &:active {
       transform: scale(.99);

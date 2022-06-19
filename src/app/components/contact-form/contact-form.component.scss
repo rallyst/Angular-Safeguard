@@ -1,8 +1,8 @@
+@use "../../../styles/variables" as variables;
+
 .container {
-  background-color: #fff;
+  background-color: variables.$color-white;
   min-height: 100vh;
-  // width: 100vw;
-  // padding-top: 60px;
   padding-left: 92px;
   padding-right: 30px;
   max-width: 1388px;
@@ -17,17 +17,17 @@
 
 .contact__title {
   text-transform: uppercase;
-  font-family: 'Anton', sans-serif;
+  font-family: variables.$font-header;
   font-size: 50px;
   line-height: 75px;
-  color: #FFBC00;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+  color: variables.$color-main;
+  text-shadow: variables.$shadow-light;
   letter-spacing: 2px;
   margin: 0;
   margin-top: 25px;
 
   span {
-    color: #000;
+    color: variables.$color-black;
   }
 }
 
@@ -41,7 +41,7 @@
   flex-direction: column;
   max-width: 1170px;
   border-radius: 30px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 16px variables.$color-ultralight-black_8;
   margin-top: 31px;
   padding: 40px 60px;
 
@@ -60,7 +60,7 @@
   }
 
   .mat-form-field-underline {
-      background-color: rgba(0, 0, 0, .2);
+    background-color: variables.$color-light-black_25;
   }
 }
 

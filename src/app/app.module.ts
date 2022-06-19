@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgMaterialModule } from './ng-material/ng-material.module';
 import { MainPageModule } from './components/main-page/main-page.module';
 import { MenuModule } from './components/menu/menu.module';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,10 @@ import { MenuModule } from './components/menu/menu.module';
     MainPageModule,
     MenuModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

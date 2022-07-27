@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgMaterialModule } from '../../ng-material/ng-material.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
 
-
 @NgModule({
   declarations: [
     ContactFormComponent

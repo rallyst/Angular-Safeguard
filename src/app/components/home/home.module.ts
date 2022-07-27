@@ -5,7 +5,6 @@ import { NavigationModule } from '../../shared/components/navigation/navigation.
 import { LogoModule } from '../../shared/components/logo/logo.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
 
-
 @NgModule({
   declarations: [
     HomeComponent

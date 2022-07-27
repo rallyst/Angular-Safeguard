@@ -1,7 +1,5 @@
-import { CdkTextareaAutosize } from '@angular/cdk/text-field';
-import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { take } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -9,13 +7,9 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
-
   form!: FormGroup;
-  @ViewChild('autosize', { static: false }) autosize!: CdkTextareaAutosize;
 
-  constructor(
-    private fb: FormBuilder,
-    private _ngZone: NgZone) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -27,24 +21,22 @@ export class ContactFormComponent implements OnInit {
     });
   }
 
-  triggerResize() {
-    this._ngZone.onStable.pipe(take(1))
-      .subscribe(() => this.autosize.resizeToFitContent(true));
+  public scrollTo(component: string): void {
+    window.location.hash = component;
   }
 
-  saveDetails(form: any) {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
+  public saveDetails(form: FormGroup, formId:  FormGroupDirective) {
+    console.log(form.value);
+    formId.resetForm();
+    this.form.reset();
+
   }
 
-  inputChecker(event: any) {
+  public inputChecker(event: any) {
     const pattern = /[0-9\+\-\ ]/;
-    let inputChar = String.fromCharCode(event.charCode);
-    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+    let input = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(input)) {
       event.preventDefault();
     }
-  }
-
-  topScroll() {
-    document.documentElement.scrollTop = 0;
   }
 }

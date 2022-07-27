@@ -3,28 +3,31 @@
 .container {
   background-color: variables.$color-white;
   min-height: 100vh;
-  padding-left: 92px;
-  padding-right: 30px;
-  max-width: 1388px;
+  padding-left: 9.2rem;
+  padding-right: 3rem;
+  max-width: 138.8rem;
   margin: 0 auto;
 }
 
-.contact__header-block {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
+.contact-form {
+  font-size: 1.6rem;
 }
 
-.contact__title {
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6rem;
+}
+
+.title {
   text-transform: uppercase;
   font-family: variables.$font-header;
-  font-size: 50px;
-  line-height: 75px;
+  font-size: 5rem;
+  line-height: 150%;
   color: variables.$color-main;
   text-shadow: variables.$shadow-light;
-  letter-spacing: 2px;
-  margin: 0;
-  margin-top: 25px;
+  letter-spacing: .2rem;
+  margin: 2.5rem 0 0;
 
   span {
     color: variables.$color-black;
@@ -32,31 +35,36 @@
 }
 
 .scroll-arrow {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
 }
 
-.contact__form {
+.contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 1170px;
-  border-radius: 30px;
-  box-shadow: 0px 4px 16px variables.$color-ultralight-black_8;
-  margin-top: 31px;
-  padding: 40px 60px;
+  max-width: 117rem;
+  border-radius: 3rem;
+  box-shadow: 0 .4rem 1.6rem variables.$color-ultralight-black_8;
+  margin-top: 3.1rem;
+  padding: 4rem 6rem;
 
   input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-box-shadow: 0 0 0px 100rem white inset !important;
   }
 }
 
 ::ng-deep .mat-form-field {
-  max-width: 510px;
-  margin-bottom: 30px;
+  max-width: 51rem;
+  margin-bottom: 3rem;
+
+  .mat-form-field-label {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
 
   .mat-input-element {
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
   }
 
   .mat-form-field-underline {
@@ -64,27 +72,29 @@
   }
 }
 
-.contact__button-block {
-  margin-bottom: 30px;
+.button-block {
+  margin-bottom: 1.875em;
 }
 
 @media (max-width: 480px) {
   .container {
-    padding-left: 24px;
+    padding-left: 2.4rem;
   }
 
-  .contact__title {
-    font-size: 30px;
+  .title {
+    font-size: 3rem;
     margin: 0;
-    line-height: 37px;
+    line-height: 124%;
+    text-shadow: none;
+
   }
 
   .scroll-arrow {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
   }
 
-  .contact__form {
-    padding: 24px;
+  .contact-form {
+    padding: 2.4rem;
   }
 }

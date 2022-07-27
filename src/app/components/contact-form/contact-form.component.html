@@ -1,23 +1,22 @@
 <div class="container">
-  <div class="contact__header-block">
-    <h2 class="contact__title">contact <span>us</span></h2>
-    <a (click)="topScroll()"><img class="scroll-arrow" src="../../assets/Group2279.png" alt="arrow"></a>
+  <div class="header">
+    <h2 class="title">contact <span>us</span></h2>
+    <a (click)="scrollTo('home')"><img class="scroll-arrow" src="assets/Group2279.png" alt="arrow"></a>
   </div>
-  <!-- <div class="form-container"> -->
-    <form class="contact__form" [formGroup]="form" (ngSubmit)="saveDetails(form)">
-      <mat-form-field [hideRequiredMarker]="'true'">
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="saveDetails(form, contactForm)" #contactForm="ngForm">
+      <mat-form-field hideRequiredMarker="true">
         <mat-label>Full Name</mat-label>
         <input matInput maxlength="15" inputmode="text" formControlName="name">
         <mat-error>Full Name is required</mat-error>
       </mat-form-field>
 
-      <mat-form-field [hideRequiredMarker]="'true'">
+      <mat-form-field hideRequiredMarker="true">
         <mat-label>Company Name</mat-label>
         <input matInput maxlength="15" inputmode="text" formControlName="company">
         <mat-error>Name is required</mat-error>
       </mat-form-field>
 
-      <mat-form-field [hideRequiredMarker]="'true'">
+      <mat-form-field hideRequiredMarker="true">
         <mat-label>Phone Number</mat-label>
         <input
           matInput
@@ -29,32 +28,25 @@
         <mat-error>Phone Number is invalid</mat-error>
       </mat-form-field>
 
-      <mat-form-field [hideRequiredMarker]="'true'">
+      <mat-form-field hideRequiredMarker="true">
         <mat-label>E-mail</mat-label>
         <input matInput type="email" inputmode="email" formControlName="email">
         <mat-error>Email is invalid</mat-error>
       </mat-form-field>
 
-      <mat-form-field [hideRequiredMarker]="'true'">
+      <mat-form-field hideRequiredMarker="true">
         <mat-label>Write Us Messages</mat-label>
         <textarea matInput
-          cdkTextareaAutosize
-          #autosize="cdkTextareaAutosize"
-          formControlName="message"
-          cdkAutosizeMinRows="5"
-          cdkAutosizeMaxRows="7"></textarea>
+          rows="4"
+          formControlName="message"></textarea>
         <mat-error>min length is 10 signs</mat-error>
       </mat-form-field>
 
-      <div class="contact__button-block" mat-dialog-actions align="start">
+      <div class="button-block" mat-dialog-actions>
         <app-button
           [disabled]="!form.valid"
-          [btnConfig]="{'padding': '21px 32px', 'background-color': '#FFBC00'}">Send Message</app-button>
+          [type]="'form-btn'"
+          >Send Message</app-button>
       </div>
     </form>
   </div>
-
-<!-- <div>{{ form.value | json }}</div> -->
-
-<!-- </div> -->
-

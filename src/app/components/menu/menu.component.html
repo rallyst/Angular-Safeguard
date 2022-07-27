@@ -1,5 +1,5 @@
 <div class="container">
-  <a (click)="closeBtn()" class="close"></a>
+  <a (click)="onClose()" class="close"></a>
   <app-logo></app-logo>
   <nav>
     <ul>
@@ -7,10 +7,10 @@
       <li class="nav-item">What We Do</li>
       <li class="nav-item">About Us</li>
       <li class="nav-item">Our history</li>
-      <li class="nav-item">Contact Us</li>
+      <li class="nav-item" (click)="scrollTo('contact-form')">Contact Us</li>
     </ul>
     <ul>
-      <span class="servises-header">Services</span>
+      <span class="services-header">Services</span>
       <li class="nav-item">Training and Implementation</li>
       <li class="nav-item">Cyber Consultants</li>
       <li class="nav-item">Consultancy and brand protection</li>

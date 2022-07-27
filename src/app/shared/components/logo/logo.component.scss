@@ -1,8 +1,9 @@
-:host {
-  height: 42px;
-}
-
 img {
-  width: 194px;
-  height: 42px;
+  width: 19.4rem;
+  height: 4.2rem;
+
+  @media (max-width: 480px) {
+    width: 16.2rem;
+    height: 3.3rem;
+  }
 }

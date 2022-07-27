@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1980px;
+  max-width: 130rem;
+  padding-right: 10rem;
   margin: 0 auto;
 }
 
@@ -15,31 +16,42 @@
 nav > ul {
   list-style: none;
   display: flex;
+  align-items: center;
   margin: 0;
 }
 
 .nav-item  {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 500;
-  padding: 14px 0;
   text-shadow: variables.$shadow-light;
-  margin-right: 50px;
+  margin-right: 5rem;
   cursor: pointer;
 
   &:last-child {
     margin-right: 0;
-    padding: 14px;
-    background-color: variables.$color-white;
-    border-radius: 12px;
-    box-shadow: variables.$shadow-light;
-
-    &:active {
-      transform: scale(.99);
-    }
   }
 }
 
-@media (max-width: 775px) {
+@media (max-width: 1024px) {
+  .navbar {
+    padding-right: 6rem;
+  }
+
+  ul {
+    padding-left: 2rem;
+  }
+
+  .nav-item {
+    font-size: 1.6rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0;
+  }
+
   nav {
     display: none;
   }

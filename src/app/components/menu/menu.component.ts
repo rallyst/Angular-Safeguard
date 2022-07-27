@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-menu',
@@ -8,13 +8,16 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public menuRef: MatDialogRef<MenuComponent>) { }
 
   ngOnInit(): void {
   }
 
-  closeBtn() {
-    this.router.navigate(['/']);
+  public onClose() {
+    this.menuRef.close();
   }
 
+  public scrollTo(component: string): void {
+    window.location.hash = component;
+  }
 }

@@ -10,6 +10,9 @@ import { LogoModule } from 'src/app/shared/components/logo/logo.module';
   imports: [
     CommonModule,
     LogoModule
+  ],
+  exports: [
+    MenuComponent
   ]
 })
 export class MenuModule { }
